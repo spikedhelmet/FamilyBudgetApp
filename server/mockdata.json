@@ -1,0 +1,74 @@
+{
+  "transactions": [
+    {
+      "date": "2024-01-01",
+      "category": "Rent",
+      "amount": 600,
+      "payee": "Acme Apartments",
+      "description": "Monthly rent payment"
+    },
+    {
+      "date": "2024-01-05",
+      "category": "Groceries",
+      "amount": 50,
+      "payee": "Safeway",
+      "description": "Weekly groceries"
+    },
+    {
+      "date": "2024-01-10",
+      "category": "Dining Out",
+      "amount": 30,
+      "payee": "Pizza Hut",
+      "description": "Dinner with friends"
+    },
+    {
+      "date": "2024-01-12",
+      "category": "Utilities",
+      "amount": 150,
+      "payee": "Electric Company",
+      "description": "Electricity bill"
+    },
+    {
+      "date": "2024-01-15",
+      "category": "Transportation",
+      "amount": 40,
+      "payee": "Gas Station",
+      "description": "Car gas refill"
+    },
+    {
+      "date": "2024-01-18",
+      "category": "Entertainment",
+      "amount": 20,
+      "payee": "Movie Theater",
+      "description": "Movie tickets"
+    },
+    {
+      "date": "2024-01-20",
+      "category": "Personal Care",
+      "amount": 25,
+      "payee": "Drugstore",
+      "description": "Toiletries and hygiene products"
+    },
+    {
+      "date": "2024-01-22",
+      "category": "Shopping",
+      "amount": 75,
+      "payee": "Clothing Store",
+      "description": "New shirt and jeans"
+    },
+    {
+      "date": "2024-01-25",
+      "category": "Eating Out",
+      "amount": 15,
+      "payee": "Coffee Shop",
+      "description": "Coffee and pastries"
+    },
+    {
+      "date": "2024-01-30",
+      "category": "Subscriptions",
+      "amount": 10,
+      "payee": "Streaming Service",
+      "description": "Monthly subscription fee"
+    }
+  ]
+}

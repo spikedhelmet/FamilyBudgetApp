@@ -1,0 +1,20 @@
+Backend:
+    Transactions:
+        ✔ GET @done(24-02-11 22:00)
+        ✔ POST @done(24-02-11 22:00)
+        ✔ PUT @done(24-02-11 22:00)
+        ✔ DELETE @done(24-02-11 22:00)
+
+Frontend:
+    Transactions:
+        ✔ Display from API @done(24-02-12 17:41)
+        ☐ Configure axios.post
+            ☐ Create "add transaction" button
+            ☐ Create data input form
+                ✔ Connect to API @done(24-02-13 09:04)
+
+        ☐ Configure axios.put
+            ☐ Create "edit transaction" button
+                ☐ Connect to API
+
+        ☐ Configure axios.delete

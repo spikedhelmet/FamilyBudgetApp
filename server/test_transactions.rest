@@ -1,0 +1,33 @@
+GET http://localhost:3001/api/transactions/
+
+###
+GET http://localhost:3001/api/transactions/65c8e2fd82f818ee9635be43
+
+###
+POST http://localhost:3001/api/transactions/
+Content-Type: application/json
+
+{
+  "date": "2024-02-12",
+  "category": "Food",
+  "amount": 15,
+  "payee": "Farmer Joe",
+  "description": "Carrots"
+}
+
+###
+PUT http://localhost:3001/api/transactions/65c90c2ca26b9f10b9bf1654
+Content-Type: application/json
+
+{
+  "date": "2024-02-16",
+  "category": "Guns",
+  "amount": 500,
+  "payee": "Blackwater",
+  "description": "Rocket Launcher",
+  "payer":"Dad"
+}
+
+###
+DELETE http://localhost:3001/api/transactions/65c90c2ca26b9f10b9bf1654
+#

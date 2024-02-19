@@ -8,13 +8,26 @@ Backend:
 Frontend:
     Transactions:
         ✔ Display from API @done(24-02-12 17:41)
-        ☐ Configure axios.post
-            ☐ Create "add transaction" button
-            ☐ Create data input form
+        ✔ Configure axios.post @done(24-02-18 12:00)
+            ✔ Create "add transaction" button @done(24-02-16 10:56)
+                ✔ Make it open the the input form @done(24-02-18 11:53)
+            ✔ Create data input form @done(24-02-18 12:00)
                 ✔ Connect to API @done(24-02-13 09:04)
-
+                ✔ Style it to have overlay over the page @done(24-02-18 11:42)
+                ✔ Change the [submit] button location @done(24-02-18 11:42)
+      
         ☐ Configure axios.put
-            ☐ Create "edit transaction" button
+            ☐ Create "edit transaction" functionality
                 ☐ Connect to API
 
-        ☐ Configure axios.delete
+        ✔ Configure axios.delete @done(24-02-18 12:34)
+            ✔ Ask for confirmation to delete @done(24-02-18 22:55)
+
+        ☐ Transaction Input Form:
+            ✔ Description @done(24-02-18 11:57)
+            ☐ Date: date picker
+            ☐ Category: dropdown from existing categorioes
+                ☐ add a choice to create a new category (later)
+            ✔ Amount @done(24-02-18 11:56)
+            ✔ Hide payee @done(24-02-18 12:00)
+            ☐ Payer is automatically registered using the logged in user data (later)

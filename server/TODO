@@ -17,17 +17,25 @@ Frontend:
                 ✔ Change the [submit] button location @done(24-02-18 11:42)
       
         ☐ Configure axios.put
-            ☐ Create "edit transaction" functionality
-                ☐ Connect to API
+            ✔ Create "edit transaction" functionality @done(24-02-24 07:18)
+                ✔ Connect to API @done(24-02-19 23:48)
+                ✔ Transaction form should show existing data of the item being edited @done(24-02-20 19:51)
+                ✔ Should update visually (state[transactions]) !!! @done(24-02-24 07:40)
 
         ✔ Configure axios.delete @done(24-02-18 12:34)
             ✔ Ask for confirmation to delete @done(24-02-18 22:55)
 
         ☐ Transaction Input Form:
             ✔ Description @done(24-02-18 11:57)
-            ☐ Date: date picker
+            ✔ Date: date picker @done(24-02-23 07:40)
+                ✔ Should also work in edit form @done(24-02-23 07:51)
             ☐ Category: dropdown from existing categorioes
                 ☐ add a choice to create a new category (later)
             ✔ Amount @done(24-02-18 11:56)
             ✔ Hide payee @done(24-02-18 12:00)
             ☐ Payer is automatically registered using the logged in user data (later)
+
+        ☐ Categories:
+            ☐ Transactions are stored under categories in the database (maybe?)
+            ☐ Transactions are displayed under categories
+            ☐ Categories are created when adding a transaction

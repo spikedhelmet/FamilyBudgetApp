@@ -21,7 +21,7 @@ mongoose
 const Transaction = require("./models/transaction");
 
 app.get("/", (request, response) => {
-  response.send("<h1>Hello World!</h1>");
+  response.send("<h1>Welcome to the backend!</h1>");
 });
 // ****************************************************
 
@@ -39,18 +39,53 @@ app.get("/api/transactions", async (req, res) => {
 // ****************************************************
 
 // * GET Request for a single resource
-app.get("/api/transactions/:id", async (req, res) => {
+app.get("/api/transactions/:id", async (req, res, next) => {
   try {
     const id = req.params.id;
     const transactions = await Transaction.find({});
     const transaction = transactions.find((t) => t.id === id);
-    res.json(transaction);
+    if (transaction) {
+      res.json(transaction);
+    } else {
+      next();
+    }
+    // res.json(transaction);
   } catch (err) {
     console.error(err);
+    next();
   }
 });
-// ****************************************************
 
+// ****************************************************
+// * GET Request for a category
+app.get("/api/transactions/category/:category", async (req, res) => {
+  try {
+    const category = req.params.category;
+    const transactions = await Transaction.find({ category: category });
+    res.json(transactions);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error fetching transactions by category");
+  }
+});
+
+// ****************************************************
+// * GET Request for a list of categories
+app.get("/api/transactions/categories/", async (req, res) => {
+  try {
+    let categories = [];
+    // let categories = new Set();
+    const transactions = await Transaction.find({});
+    await transactions.filter((tr) => categories.push(tr.category));
+
+    res.json(categories);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error fetching categories");
+  }
+});
+
+// ****************************************************
 // * POST Request
 app.post("/api/transactions", async (req, res) => {
   try {

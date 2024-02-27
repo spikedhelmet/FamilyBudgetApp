@@ -1,7 +1,13 @@
 GET http://localhost:3001/api/transactions/
 
 ###
-GET http://localhost:3001/api/transactions/65c8e2fd82f818ee9635be43
+GET http://localhost:3001/api/transactions/65d1b941de795db4db799232
+
+###
+GET http://localhost:3001/api/transactions/category/Drinks
+
+###
+GET http://localhost:3001/api/transactions/categories
 
 ###
 POST http://localhost:3001/api/transactions/
@@ -11,8 +17,18 @@ Content-Type: application/json
   "date": "2024-02-12",
   "category": "Food",
   "amount": 15,
-  "payee": "Farmer Joe",
   "description": "Carrots"
+}
+
+###
+POST http://localhost:3001/api/transactions/
+Content-Type: application/json
+
+{
+  "date": "2024-02-26",
+  "category": "drinks"
+  "amount": 25,
+  "description": "Whiskey"
 }
 
 ###

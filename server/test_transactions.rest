@@ -19,6 +19,13 @@ Content-Type: application/json
   "amount": 15,
   "description": "Carrots"
 }
+###
+POST http://localhost:3001/api/transactions/categories
+Content-Type: application/json
+
+{
+  "name": "Food"
+}
 
 ###
 POST http://localhost:3001/api/transactions/

@@ -19,6 +19,7 @@ mongoose
   .catch((error) => console.error(error));
 
 const Transaction = require("./models/transaction");
+const Category = require("./models/categorySchema");
 
 app.get("/", (request, response) => {
   response.send("<h1>Welcome to the backend!</h1>");
@@ -49,7 +50,6 @@ app.get("/api/transactions/:id", async (req, res, next) => {
     } else {
       next();
     }
-    // res.json(transaction);
   } catch (err) {
     console.error(err);
     next();
@@ -73,20 +73,49 @@ app.get("/api/transactions/category/:category", async (req, res) => {
 // * GET Request for a list of categories
 app.get("/api/transactions/categories/", async (req, res) => {
   try {
-    let categories = [];
-    // let categories = new Set();
-    const transactions = await Transaction.find({});
-    await transactions.filter((tr) => categories.push(tr.category));
-
-    res.json(categories);
+    const categories = await Category.find({});
+    let categoryNames = [];
+    categories.forEach((cat) => categoryNames.push(cat.name));
+    res.json(categoryNames);
   } catch (err) {
     console.error(err);
     res.status(500).send("Error fetching categories");
   }
 });
 
+// * POST new category
+
+// async function createCategories() {
+//   try {
+//     const categories = [
+//       "Housing",
+//       "Utilities",
+//       "Food",
+//       "Transport",
+//       "Health",
+//       "Education",
+//       "Entertainment",
+//       "Credit",
+//       "Savings",
+//       "Other",
+//     ];
+
+//     for (const categoryName of categories) {
+//       const newCategory = new Category({ name: categoryName });
+//       await newCategory.save();
+//     }
+
+//     console.log("Categories created!");
+//   } catch (err) {
+//     console.error(err);
+//   }
+// }
+
+// createCategories();
+
 // ****************************************************
 // * POST Request
+
 app.post("/api/transactions", async (req, res) => {
   try {
     const body = req.body;
@@ -116,8 +145,13 @@ app.post("/api/transactions", async (req, res) => {
     await newTransaction.save();
     res.json({ succes: true, message: "Transaction saved succesfully" });
   } catch (error) {
-    console.error(error);
-    res.status(500).send("Error posting transaction", error.message);
+    if (error.name === "MongoError" && error.code === 11000) {
+      // Duplicate key error
+      res.status(400).json({ error: "Category already exists" });
+    } else {
+      console.error(error);
+      res.status(500).send("Error posting transaction");
+    }
   }
 });
 // ****************************************************
@@ -177,6 +211,26 @@ app.delete("/api/transactions/:id", async (req, res) => {
     res
       .status(500)
       .json({ error: `Failed to delete transaction: ${err.message}` });
+  }
+});
+// ****************************************************
+
+// * GET Total Spending
+app.get("/api/transactions/totalSpending", async (req, res) => {
+  try {
+    // const transactions = await Transaction.find({});
+    // const total = transactions.reduce((acc, tr) => (acc += tr.amount), 0);
+    // res.json(total);
+    const total = await Transaction.aggregate([
+      { $group: { _id: null, totalSpending: { $sum: "$amount" } } },
+    ]);
+
+    res.json(total[0].totalSpending);
+  } catch (err) {
+    console.error(err);
+    res
+      .status(500)
+      .json({ error: `Failed to get Total Spending: ${err.message}` });
   }
 });
 // ****************************************************

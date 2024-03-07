@@ -29,17 +29,29 @@ Frontend:
             ✔ Description @done(24-02-18 11:57)
             ✔ Date: date picker @done(24-02-23 07:40)
                 ✔ Should also work in edit form @done(24-02-23 07:51)
-            ☐ Category: dropdown from existing categorioes
-                ☐ add a choice to create a new category (later)
+            ✔ Category: dropdown from existing categorioes @done(24-03-05 08:30)
             ✔ Amount @done(24-02-18 11:56)
                 ☐ Should accept numbers only
             ✔ Hide payee @done(24-02-18 12:00)
             ☐ Payer is automatically registered using the logged in user data (later)
+            ☐ Make transaction form usable for both creation and editing / Split the form into components
 
         ☐ Categories:
             ✔ Transactions are filtered by categories in the database @done(24-02-26 08:33)
             ✔ Transactions are displayed under categories (FrontEnd) @done(24-02-27 07:26)
-            ☐ Categories are created when adding a transaction
-            ☐ Categories are going to be unique in the backend (using Mongoose Models) !!!
+            ✔ Instead of a free-text input field for the category, implement the following: @done(24-03-05 06:59)
+            ✔ Dropdown for categories @done(24-02-29 07:20)
+            ✔ Pre-define the categories in the backend thus removing the need to create categories dynamically @done(24-03-03 18:45)
+            ✔ Categories are going to be unique in the backend (using Mongoose Models) @done(24-03-03 18:46)
+            ☐ If no category is picked, automatically switch to "other" category
+            ✔ Don't display the category if the are no transactions for it @done(24-03-03 20:27)
+
+        ☐ Total Budget:
+            ✔ Show total budget at the top @done(24-03-05 16:11)
+            ✔ Total spent @done(24-03-05 16:11)
+            ☐ Total remaining (should be calculated in the db or server; should be calculated by using total income) (Later; Important!!!)
+            ✔ Add some sort of chart here @done(24-03-06 19:57)
+            ✔ Percentage calculation for the data @done(24-03-07 09:25)
+            ✔ Indicate which colors the data stands for in the pie chart @done(24-03-07 09:09)
 
         ☐ Redux

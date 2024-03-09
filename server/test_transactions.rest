@@ -17,7 +17,7 @@ Content-Type: application/json
   "date": "2024-02-12",
   "category": "Food",
   "amount": 15,
-  "description": "Carrots"
+  "description": "Cream"
 }
 ###
 POST http://localhost:3001/api/transactions/categories
